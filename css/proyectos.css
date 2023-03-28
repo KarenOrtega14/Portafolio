@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+}
+.nav{
+    grid-area: nav;
+    background: #000000;
+    border-bottom: 2px solid #BA0038;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    padding: 15px;
+    display: inline-block;
+    color: white;
+}
+li:hover{
+    color: #BA0038;
+    font-size: 17px;
+}
+.content-perfil{
+    grid-area: perfil;
+    background-color: #141414;
+}
+.caja1{
+    grid-area: caja1;
+}
+.caja2{
+    grid-area: caja2;
+}
+.caja3{
+    grid-area: caja3;
+}
+.caja4{
+    grid-area: caja4;
+}
+.caja5{
+    grid-area: caja5;
+}
+.caja6{
+    grid-area: caja6;
+}
+
+.contenedor{
+    display: grid;
+    
+    width: 100%;
+    grid-template: 
+    "caja1"
+    "caja2"
+    "caja3"
+    "caja4"
+    "caja5"
+    "caja6"
+   ;
+    
+}
+.galeria-port{
+    width: 80%;
+    margin: 20px;
+}
+
+.imagen-port{
+    border-radius: 15px;
+    height: 40vh;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 5px 10px 10px  #8888886c;
+}
+
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: rgba(14, 16, 110, 0.664);
+    transition: transform .5s;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+ 
+}
+
+.hover-galeria img{
+    width: 50px;
+}
+
+.hover-galeria p{
+    color: #fff;
+}
+
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+}
+
+.content-info{
+    grid-area: info;
+    background-color: #373737;
+}
+.img-perfil{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-position-x: center;
+}
+.imgP{
+    width: 100%;
+}
+.foter{
+    grid-area: foter;
+    background-color: #000000;
+    color:wheat;
+}
+
+.content-main{
+display: grid;
+grid-template: 
+"nav nav" 50px
+"perfil info"90%
+"foter foter"150px/
+auto 150px;
+}
+@media (min-width:600px) {
+    .content-main{
+        display: grid;
+        grid-template: 
+        "nav nav" 50px
+        "perfil info"90%
+        "foter foter"150px/
+        auto 150px;
+        }
+        .contenedor{
+            display: grid; 
+            width: 100%;
+            grid-template: 
+            "caja1 caja2"
+            "caja3 caja4"
+            "caja5 caja6"
+           ;
+            
+        }
+}
+@media (min-width:900px) {
+    .nav{
+        border-bottom: none;
+    }
+    ul{
+        margin-top: 130px;
+    }
+    li{
+        padding-left: 20px;
+        border-left: 3px solid #BA0038;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        width: 95%;
+        height: 35px;
+        padding: 8px 0 0 10px;
+    }
+    li:hover{
+        background-color: #8e8e8e72;
+        color: #fff;
+    }
+    .galeria-port{
+        width: 200px;
+        margin: 20px;
+    }
+    .content-main{
+        display: grid;
+        grid-template: 
+        "nav perfil info"80%
+        "foter foter foter"150px/
+        100px auto 200px;
+        }
+        .contenedor{
+            display: grid; 
+            width: 100%;
+            grid-template: 
+            "caja1 caja2 caja3"
+            "caja4 caja5 caja6"
+           ;
+            
+        }
+}
+@media (min-width:1700px){
+    .galeria-port{
+        width: 300px;
+        margin: 20px;
+    }
+    .content-main{
+        display: grid;
+        grid-template: 
+        "nav perfil info"80%
+        "foter foter foter"150px/
+        100px auto 200px;
+        }
+}
+@media (min-width:2000px){
+    .galeria-port{
+        width: 500px;
+        margin: 20px;
+    }
+
+}
